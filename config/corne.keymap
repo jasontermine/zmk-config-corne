@@ -57,22 +57,26 @@
     };
 
     macros {
-        browsertab: browsertab {
+        windowtab: browsertab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCTRL>,
+                <&kp RIGHT_ALT>,
                 <&macro_tap>,
                 <&kp TAB>,
-                <&macro_release>,
-                <&kp LCTRL>;
+                <&macro_release>;
         };
 
         ue: ue {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp RALT>, <&macro_press>, <&kp Y>;
+            bindings =
+                <&macro_press>,
+                <&kp RALT>,
+                <&macro_tap>,
+                <&kp Y>,
+                <&macro_release>;
 
             label = "UE";
         };
@@ -80,7 +84,12 @@
         oe: oe {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp RALT>, <&macro_press>, <&kp P>;
+            bindings =
+                <&macro_press>,
+                <&kp RALT>,
+                <&macro_tap>,
+                <&kp P>,
+                <&macro_release>;
 
             label = "OE";
         };
@@ -88,7 +97,12 @@
         ae: ae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp RALT>, <&macro_press>, <&kp Q>;
+            bindings =
+                <&macro_press>,
+                <&kp RALT>,
+                <&macro_tap>,
+                <&kp Q>,
+                <&macro_release>;
 
             label = "AE";
         };
@@ -228,7 +242,7 @@
 &trans  &kp CARET         &kp SINGLE_QUOTE       &kp DOUBLE_QUOTES  &kp GRAVE          &kp TILDE        &kp AT_SIGN   &kp PLUS         &kp ASTERISK   &kp EQUAL  &kp UNDERSCORE  &trans
 &trans  &kp LESS_THAN     &kp LEFT_PARENTHESIS   &kp LEFT_BRACE     &kp LEFT_BRACKET   &kp BACKSLASH    &kp QUESTION  &kp EXCLAMATION  &kp AMPERSAND  &kp PIPE   &kp MINUS       &trans
 &trans  &kp GREATER_THAN  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE    &kp RIGHT_BRACKET  &kp SLASH        &kp DOLLAR    &kp PERCENT      &kp COLON      &kp HASH   &kp SLASH       &trans
-                                                 &trans             &trans             &browsertab      &trans        &trans           &trans
+                                                 &trans             &trans             &windowtab       &trans        &trans           &trans
             >;
         };
 
